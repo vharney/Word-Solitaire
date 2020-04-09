@@ -13,6 +13,7 @@ To add randomly generated letters into words in the given spaces (rows). The lon
 The player can decide whether to submit words in corresponding rows after every move. The score will be added based on the gap filled, the score for every gap is shown above the 1st row.
 
 When a player submitted a wrong word (not in the english dictionary), the player will get a mistake counter which will be shown in the mistake counter on the top right. When the player submit a wrong word in one of the rows, the corresponding row will be cleared.
+
 The game ends, when the player submitted 5 wrong words. 
 
 User can pause the game and save it to a file. They can continue to play the game whenever they feel like it.
