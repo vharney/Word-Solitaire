@@ -20,25 +20,25 @@ User can pause the game and save it to a file. They can continue to play the gam
 
 ///////////////////////////////////////////////////////PROTOTYPE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-||Total Score: (score)                                                                                          mistakes: 0 ||
+Total Score: (score)                                                                                          mistakes: 0 
 
-||                                                                                                                          ||
+                                                                                                                          
 
-||score   100  100  100  300  400  500  500  500  800  1000                                                                 ||
+score   100  100  100  300  400  500  500  500  800  1000                                                                 
 
-||Row 1 :  _    _    _    _    _    _    _    _    _    _                                                                   ||
+Row 1 :  _    _    _    _    _    _    _    _    _    _                                                                   
 
-||Row 2 :  _    _    _    _    _    _    _    _    _    _                                                                   ||
+Row 2 :  _    _    _    _    _    _    _    _    _    _                                                                   
 
-||Row 3 :  _    _    _    _    _    _    _    _    _    _                                                                   ||
+Row 3 :  _    _    _    _    _    _    _    _    _    _                                                                   
 
-||Row 4 :  _    _    _    _    _    _    _    _    _    _                                                                   ||
+Row 4 :  _    _    _    _    _    _    _    _    _    _                                                                   
 
-||Row 5 :  _    _    _    _    _    _    _    _    _    _                                                                   || 
+Row 5 :  _    _    _    _    _    _    _    _    _    _                                                                    
 
-||                                                                                                                          ||
+                                                                                                                          
 
-||Letter: (random letter)                                                                         High Score: (all-time hs) || 
+Letter: (random letter)                                                                         High Score: (all-time hs)  
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////////////////////////////////
 
