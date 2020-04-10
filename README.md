@@ -1,10 +1,13 @@
-# 1340-Project
+# 1340-Project (Group 124)
 
 Members:
 --------
 1. Mellisa Hadipranata  (3035663019)
 2. Vieri Harney         (3035663368)
 
+Name
+----
+Word Solitaire
 
 Game Description:
 -----------------
@@ -12,16 +15,25 @@ To add randomly generated letters into words in the given spaces (rows). The lon
 
 The player can decide whether to submit words in corresponding rows after every move. The score will be added based on the gap filled, the score for every gap is shown above the 1st row.
 
-When a player submitted a wrong word (not in the english dictionary), the player will get a mistake counter which will be shown in the mistake counter on the top right. When the player submit a wrong word in one of the rows, the corresponding row will be cleared.
-
-The game ends, when the player submitted 5 wrong words. 
-
 User can pause the game and save it to a file. They can continue to play the game whenever they feel like it.
+
+Every time the player launches the game, the player can choose whether to continue the game from the last session (from the existing file) or start a new game.
+
+Game Rules:
+-----------
+
+When a player submits a wrong word (not in the english dictionary), the mistake counter will increase by 1 (which will be shown in the mistake counter on the top right). 
+
+When the player submits a wrong word in one of the rows, the corresponding row will be cleared.
+
+The game ends:
+- When the player submitted 5 wrong words (the mistake counter is 5). 
+- When all the rows are filled and no valid word can be submitted.
 
 ///////////////////////////////////////////////////////PROTOTYPE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-Total Score: (score)                                                                                          mistakes: 0 
-
+Total Score: (score)                                                                                               mistakes: 0 
+ 
                                                                                                                           
 
 score   100  100  100  300  400  500  500  500  800  1000                                                                 
@@ -38,7 +50,7 @@ Row 5 :  _    _    _    _    _    _    _    _    _    _
 
                                                                                                                           
 
-Letter: (random letter)                                                                         High Score: (all-time hs)  
+Letter: (random letter)                                                                              High Score: (all-time hs)  
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////////////////////////////////
 
@@ -47,20 +59,35 @@ Functions:
 ----------
 1. Generation of random game sets or events
   - Random letter generator
+  
 2. Data structures for storing game status
   - Storing mistakes
   - Storing unfinished words
   - Storing scores
+  
 3. Dynamic memory management
-  - To store each row in a dynamic array (will be freed when a word is completed)
+  - To store each row in a dynamic array and/or vector (will be freed when a word is completed)
   - Change size when adding a new word.
+  
 4. File input/output (e.g., for loading/saving game status)
-  - When game ends fout to a file containing the scores
+  - When game ends fout to a file containing the scores (if the high score is beaten)
   - fin from the file of scores the highest score
   - user can pause the game, saved to a file (savefile.txt)
   - user can load paused game, fin from the savefile.txt
+  
 5. Program codes in multiple files
-  - different functions will be coded in multiple files (i.e function to randomise letter, function to save mistake counter etc.)
+   different functions will be coded in multiple files (i.e function to randomise letter, function to save mistake counter etc.)
+  - random_letter.cpp
+  - check_mistake.cpp
+  - import_dictionary.cpp
+  - high_score.cpp
+  - check_word.cpp
+  - score_calculator.cpp
+  - start.cpp
+  - finish.cpp
+  - choose_row.cpp
+  - play.cpp
+  
 6. Importing dictionary to check if word exist
 
 Citation:
