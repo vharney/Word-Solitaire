@@ -1,6 +1,8 @@
 #include <iostream>
 #include "random_letter.h"
 #include "print_board.h"
+#include "start.h"
+#include "check_word.h"
 using namespace std;
 
 
@@ -15,16 +17,21 @@ int main(){
     int score = 0, mistake = 0;
     char letter;
     string input;
+    char row_number;
     set_empty(row_1);
     set_empty(row_2);
     set_empty(row_3);
     set_empty(row_4);
     set_empty(row_5);
-    print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
     letter = random_letter();
+    start();
+    cout << ">> Happy playing! <<" << endl;
+    print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
+
     while (input != "exit"){
         cout << "Letter: " << letter << endl;
         cout << "Select row or Exit Game" << endl;
+        cout << "Your input: ";
         cin >> input;
         if (input == "1"){
             row_1[counter_1] = letter;
@@ -54,7 +61,17 @@ int main(){
         else if (input == "exit"){
             break;
         }
+        // else if (input == "submit"){
+        //     cout << "Which row you want to submit?" << endl;
+        //     cin >> row_number;
+
+        //     if (check_word()){
+        //         score_calculator()
+        //     }
+        // }
         else{
+            cout << endl;
+            cout << "Sorry. Your input is invalid!" << endl;
             continue;
         }
         letter = random_letter();
