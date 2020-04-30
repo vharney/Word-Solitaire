@@ -1,28 +1,24 @@
 #include <iostream>
+#include <vector>
 #include "random_letter.h"
 #include "print_board.h"
 #include "start.h"
-#include "check_word.h"
+// #include "check_word.h"
 using namespace std;
 
 
-void set_empty(char row[]){
-    for (int i = 0; i < 10; ++i)
-        row[i] = '_';
-}
-
 int main(){
-    char row_1[10], row_2[10], row_3[10], row_4[10], row_5[10];
+    vector<char> row_1, row_2, row_3, row_4, row_5;
     int counter_1 = 0, counter_2 = 0, counter_3 = 0, counter_4 = 0, counter_5 = 0;
     int score = 0, mistake = 0;
     char letter;
     string input;
     char row_number;
-    set_empty(row_1);
-    set_empty(row_2);
-    set_empty(row_3);
-    set_empty(row_4);
-    set_empty(row_5);
+    row_1.assign(10, '_');
+    row_2.assign(10, '_');
+    row_3.assign(10, '_');
+    row_4.assign(10, '_');
+    row_5.assign(10, '_');
     letter = random_letter();
     start();
     cout << ">> Happy playing! <<" << endl;

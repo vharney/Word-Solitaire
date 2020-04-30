@@ -1,7 +1,8 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-void print_board(char row_1[], char row_2[], char row_3[], char row_4[], char row_5[], int score, int mistakes){
+void print_board(vector<char> &row_1, vector<char> &row_2, vector<char> &row_3, vector<char> &row_4, vector<char> &row_5, int score, int mistakes){
     cout << endl;
     cout << "Total Score: " << score << "                              " << "Mistakes: " << mistakes << endl << endl;
 
