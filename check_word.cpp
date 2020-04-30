@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-bool check_word(vector<char> row){
+bool check_word(vector<char> row, int counter){
     string first_letter;
     string x;
     string word = "";
@@ -12,10 +12,9 @@ bool check_word(vector<char> row){
 
     first_letter = row[0];
 
-    for (int i = 0; i < 10; i++){
-        word += row[i];
+    for (int i = 0; i < counter; i++){
+        word += row[i]+32;
     }
-
     ifstream fin;
     fin.open(("dictionary/" + first_letter + "_DICT.txt").c_str());
     while (fin >> x){
