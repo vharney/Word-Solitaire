@@ -9,7 +9,7 @@ help.o: help.cpp help.h
 game_over.o: game_over.cpp game_over.h
 	g++ $(FLAGS) -c $<
 
-start.o: start.cpp start.h help.o
+start.o: start.cpp start.h help.h
 	g++ $(FLAGS) -c $<
 
 score_calculator.o: score_calculator.cpp score_calculator.h
