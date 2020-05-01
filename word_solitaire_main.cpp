@@ -7,6 +7,7 @@
 #include "help.h"
 #include "check_word.h"
 #include "score_calculator.h"
+#include "mistake_adder.h"
 using namespace std;
 
 
@@ -97,7 +98,7 @@ int main(){
                     cout << "Sorry. The row you are submitting is empty!" << endl;
                     continue;
                 }
-                valid = check_word (row_1, counter_1);
+                valid = check_word(row_1, counter_1);
                 word_length = counter_1;
                 counter_1 = 0;
                 row_1.assign(10, '_');
@@ -106,7 +107,7 @@ int main(){
                     cout << "Sorry. The row you are submitting is empty!" << endl;
                     continue;
                 }
-                valid = check_word (row_2, counter_2);
+                valid = check_word(row_2, counter_2);
                 word_length = counter_2;
                 counter_2 = 0;
                 row_2.assign(10, '_');
@@ -144,7 +145,12 @@ int main(){
                 cout << "YEAY YOU DID IT!!!" << endl;
                 
             } else{
-
+                mistake_adder(mistake);
+                if (mistake == 10){
+                    //make new function final()
+                    cout << "Game Over!, Your Score is " << score << endl;
+                    break;
+                }
             }
             print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
             continue;
