@@ -1,10 +1,15 @@
 #include <iostream>
 #include <vector>
+#include <string>
+#include <iomanip>
 using namespace std;
 
 void print_board(vector<char> &row_1, vector<char> &row_2, vector<char> &row_3, vector<char> &row_4, vector<char> &row_5, int score, int mistakes){
     cout << endl;
-    cout << "Total Score: " << score << "                              " << "Mistakes: " << mistakes << endl << endl;
+    cout << "-------------------------------------------------------------" << endl;
+    cout << "Total Score: " << score;
+    cout << right;
+    cout << setw (48-(to_string(score)).length()) << "Mistakes: " + to_string(mistakes) << endl << endl;
 
     cout << "ROW 1:  ";
     for (int i = 0; i < 10; ++i)
@@ -29,5 +34,6 @@ void print_board(vector<char> &row_1, vector<char> &row_2, vector<char> &row_3, 
     cout << "ROW 5:  ";
     for (int i = 0; i < 10; ++i)
         cout << row_5[i] << "  ";
-    cout << endl << endl;
+    cout << endl << endl << "-------------------------------------------------------------" << endl;
+    cout << endl;
 }
