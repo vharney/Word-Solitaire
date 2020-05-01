@@ -10,6 +10,7 @@ start.o: start.cpp start.h help.o
 	g++ $(FLAGS) -c $<
 
 score_calculator.o: score_calculator.cpp score_calculator.h
+	g++ $(FLAGS) -c $<
 
 check_word.o: check_word.cpp check_word.h
 	g++ $(FLAGS) -c $<
