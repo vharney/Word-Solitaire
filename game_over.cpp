@@ -4,7 +4,9 @@ using namespace std;
 
 void game_over(int score){
     string play_again;
-    cout << endl << "GAME OVER! Your score is " << score << endl;
+    cout << right;
+    cout << setw(38) << ">> GAME OVER! <<" << endl << endl;
+    cout << "Your score is " << score << endl;
     // if the current score is higher than the all time high score
     // if (score > high_score){
     //     cout << "CONGRATULATIONS!! You beat the high score!" << endl;
