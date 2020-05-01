@@ -138,7 +138,11 @@ int main(){
                 word_length = counter_5;
                 counter_5 = 0;
                 row_5.assign(10, '_');
-            } 
+            } else{
+            cout << endl;
+            cout << "Sorry. Your input is invalid!" << endl << endl;
+            continue;
+            }
 
             if (valid){
                 score_calculator(word_length, score);
