@@ -8,6 +8,7 @@
 #include "check_word.h"
 #include "score_calculator.h"
 #include "mistake_adder.h"
+#include "game_over.h"
 using namespace std;
 
 
@@ -28,7 +29,7 @@ int main(){
     letter = random_letter();
     start();
     cout << right;
-    cout << setw(42) << ">> Happy playing! <<" << endl;
+    cout << setw(42) << ">> Have fun playing! <<" << endl;
     print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
 
     while (input != "exit"){
@@ -139,9 +140,9 @@ int main(){
                 counter_5 = 0;
                 row_5.assign(10, '_');
             } else{
-            cout << endl;
-            cout << "Sorry. Your input is invalid!" << endl << endl;
-            continue;
+                cout << endl;
+                cout << "Sorry. Your input is invalid!" << endl << endl;
+                continue;
             }
 
             if (valid){
@@ -150,9 +151,9 @@ int main(){
                 
             } else{
                 mistake_adder(mistake);
-                if (mistake == 10){
-                    //make new function final()
-                    cout << "Game Over!, Your Score is " << score << endl;
+                if (mistake > 10){
+                    cout << endl;
+                    game_over(score);
                     break;
                 }
             }
