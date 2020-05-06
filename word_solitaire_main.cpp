@@ -10,6 +10,8 @@
 #include "mistake_adder.h"
 #include "game_over.h"
 #include "set_empty.h"
+#include "save_progress.h"
+#include "quit.h"
 using namespace std;
 
 
@@ -92,7 +94,11 @@ int main(){
                 continue;
             }
         }
-        else if (input == "exit"){
+        else if (input == "quit"){
+            string quit_game = quit();
+            if (quit_game == "save"){
+                save_progress(score, mistake, letter, row_1, row_2, row_3, row_4, row_5);
+            }
             delete [] row_1;
             delete [] row_2;
             delete [] row_3;
