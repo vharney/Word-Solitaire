@@ -1,10 +1,11 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 string quit(){
     string save_progress;
     string res;
-    cout << "Do you want to save your progress? (yes/no)"
+    cout << "Do you want to save your progress? (yes/no)";
     cin >> save_progress;
     while (true){
         if (save_progress == "yes"){
