@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <fstream>
 #include "random_letter.h"
 #include "print_board.h"
 #include "start.h"
@@ -12,6 +13,8 @@
 #include "set_empty.h"
 #include "save_progress.h"
 #include "quit.h"
+#include "check_progress.h"
+#include "load_progress.h"
 using namespace std;
 
 
@@ -28,13 +31,18 @@ int main(){
     int row_number;
     bool valid;
     int word_length;
-    set_empty(row_1);
-    set_empty(row_2);
-    set_empty(row_3);
-    set_empty(row_4);
-    set_empty(row_4);
-    set_empty(row_5);
-    letter = random_letter();
+    if (check_progress()){
+        set_empty(row_1);
+        set_empty(row_2);
+        set_empty(row_3);
+        set_empty(row_4);
+        set_empty(row_4);
+        set_empty(row_5);
+        letter = random_letter();
+    }
+    else{
+        load_progress(score, mistake, letter, row_1, row_2, row_3, row_4, row_5, counter_1, counter_2, counter_3, counter_4, counter_5);
+    }
     start();
     cout << right;
     cout << setw(42) << ">> Have fun playing! <<" << endl;
@@ -97,7 +105,13 @@ int main(){
         else if (input == "quit"){
             string quit_game = quit();
             if (quit_game == "save"){
-                save_progress(score, mistake, letter, row_1, row_2, row_3, row_4, row_5);
+                save_progress(score, mistake, letter, row_1, row_2, row_3, row_4, row_5, counter_1, counter_2, counter_3, counter_4, counter_5);
+            }
+            else{
+                ofstream fout;
+                fout.open("progress.txt");
+                fout << "";
+                fout.close();
             }
             delete [] row_1;
             delete [] row_2;
@@ -171,6 +185,10 @@ int main(){
                 if (mistake > 10){
                     cout << endl;
                     game_over(score);
+                    ofstream fout;
+                    fout.open("progress.txt");
+                    fout << "";
+                    fout.close();
                     delete [] row_1;
                     delete [] row_2;
                     delete [] row_3;

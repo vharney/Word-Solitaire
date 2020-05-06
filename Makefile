@@ -18,6 +18,12 @@ save_row.o: save_row.cpp save_row.h
 quit.o: quit.cpp quit.h
 	g++ $(FLAGS) -c $<
 
+check_progress.o: check_progress.cpp check_progress.h
+	g++ $(FLAGS) -c $<
+
+load_progress.o: load_progress.cpp load_progress.h
+	g++ $(FLAGS) -c $<
+
 save_progress.o: save_progress.cpp save_progress.h save_row.h
 	g++ $(FLAGS) -c $<
 
@@ -39,7 +45,7 @@ mistake_adder.o: mistake_adder.cpp mistake_adder.h
 word_solitaire_main.o: word_solitaire_main.cpp random_letter.h check_word.h score_calculator.h game_over.h save_progress.h quit.h
 	g++ $(FLAGS) -c $<
 
-word_solitaire: random_letter.o word_solitaire_main.o print_board.o start.o help.o check_word.o score_calculator.o mistake_adder.o game_over.o set_empty.o save_row.o save_progress.o quit.o
+word_solitaire: random_letter.o word_solitaire_main.o print_board.o start.o help.o check_word.o score_calculator.o mistake_adder.o game_over.o set_empty.o save_row.o save_progress.o quit.o check_progress.o load_progress.o
 	g++ $(FLAGS) $^ -o $@
 
 clean:
