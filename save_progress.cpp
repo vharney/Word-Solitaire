@@ -9,7 +9,7 @@ void save_progress(int score, int mistake, char letter, char * row_1, char * row
     fout << score << endl;
     fout.close();
 
-    fout.open("progress.txt", ios::app)
+    fout.open("progress.txt", ios::app);
     fout << mistake << endl;
     fout << letter << endl;
     fout.close();
