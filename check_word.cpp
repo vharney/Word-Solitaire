@@ -1,22 +1,22 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 using namespace std;
 
-bool check_word(string row[]){
-    char first_letter;
+bool check_word(vector<char> row, int counter){
+    string first_letter;
     string x;
     string word = "";
     bool res = false;
 
     first_letter = row[0];
 
-    for (int i = 0; i < 10; i++){
-        word += row[i];
+    for (int i = 0; i < counter; i++){
+        word += row[i]+32;
     }
-
     ifstream fin;
-    fin.open((first_letter + "_DICT.txt").c_str());
+    fin.open(("dictionary/" + first_letter + "_DICT.txt").c_str());
     while (fin >> x){
         if (x.length() > word.length()){
             break;

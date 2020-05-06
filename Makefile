@@ -6,7 +6,13 @@ random_letter.o: random_letter.cpp random_letter.h
 help.o: help.cpp help.h
 	g++ $(FLAGS) -c $<
 
-start.o: start.cpp start.h help.o
+game_over.o: game_over.cpp game_over.h
+	g++ $(FLAGS) -c $<
+
+start.o: start.cpp start.h help.h
+	g++ $(FLAGS) -c $<
+
+score_calculator.o: score_calculator.cpp score_calculator.h
 	g++ $(FLAGS) -c $<
 
 check_word.o: check_word.cpp check_word.h
@@ -15,10 +21,13 @@ check_word.o: check_word.cpp check_word.h
 print_board.o: print_board.cpp print_board.h
 	g++ $(FLAGS) -c $<
 
-word_solitaire_main.o: word_solitaire_main.cpp random_letter.h check_word.h
+mistake_adder.o: mistake_adder.cpp mistake_adder.h
 	g++ $(FLAGS) -c $<
 
-word_solitaire: random_letter.o word_solitaire_main.o print_board.o start.o help.o check_word.o
+word_solitaire_main.o: word_solitaire_main.cpp random_letter.h check_word.h score_calculator.h game_over.h
+	g++ $(FLAGS) -c $<
+
+word_solitaire: random_letter.o word_solitaire_main.o print_board.o start.o help.o check_word.o score_calculator.o mistake_adder.o game_over.o
 	g++ $(FLAGS) $^ -o $@
 
 clean:

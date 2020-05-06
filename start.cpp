@@ -1,14 +1,17 @@
 #include <iostream>
 #include "help.h"
+#include <iomanip>
 using namespace std;
 
 void start(){
-    cout << "Welcome to World Solitaire!" << endl << endl;
-    cout << "Try to create words with the random letters provided, " << endl;
-    cout << "the longer the word the higher score you will get!" << endl;
-    cout << "The score for every letter can be seen on top of ROW 1." << endl;
-    cout << "Your total score will be shown on the top left." << endl; 
-    cout << "You are only allowed to submit a maximum of 5 invalid words and counted as a mistake." << endl;
-    cout << "Your mistakes will be recorded and shown on the top right." << endl << endl;
+    cout << endl;
+    cout << right;
+    cout << setw(44) << "Welcome to World Solitaire!" << endl << endl;
+    cout << "Try  to  create  words  with the random letters provided, the" << endl;
+    cout << "longer  the  word  the  higher score you will get! Your total" << endl;
+    cout << "score  will be shown on the top left. You are only allowed to" << endl; 
+    cout << "submit  a  maximum of 10 invalid words, and each invalid word" << endl;
+    cout << "will  be counted as a mistake. Your mistakes will be recorded" << endl;
+    cout << "and shown on the top right." << endl << endl;
     help();
 }
