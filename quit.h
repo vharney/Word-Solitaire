@@ -1,6 +1,6 @@
 #ifndef QUIT_H
 #define QUIT_H
 
-string quit();
+std::string quit();
 
 #endif

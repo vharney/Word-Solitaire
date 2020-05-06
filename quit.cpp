@@ -5,8 +5,9 @@ using namespace std;
 string quit(){
     string save_progress;
     string res;
-    cout << "Do you want to save your progress? (yes/no)";
+    cout << "Do you want to save your progress? (yes/no)" << endl;
     cin >> save_progress;
+    cout << endl; 
     while (true){
         if (save_progress == "yes"){
             cout << setw(55) << "Your progress has been saved! See you next time!" << endl;

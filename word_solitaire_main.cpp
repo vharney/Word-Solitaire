@@ -40,7 +40,7 @@ int main(){
     cout << setw(42) << ">> Have fun playing! <<" << endl;
     print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
 
-    while (input != "exit"){
+    while (true){
         cout << "Letter: " << letter << endl;
         cout << "Enter Command: ";
         cin >> input;
