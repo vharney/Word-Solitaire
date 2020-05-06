@@ -9,11 +9,16 @@
 #include "score_calculator.h"
 #include "mistake_adder.h"
 #include "game_over.h"
+#include "set_empty.h"
 using namespace std;
 
 
 int main(){
-    vector<char> row_1, row_2, row_3, row_4, row_5;
+    char * row_1 = new char [10];
+    char * row_2 = new char [10];
+    char * row_3 = new char [10];
+    char * row_4 = new char [10];
+    char * row_5 = new char [10];
     int counter_1 = 0, counter_2 = 0, counter_3 = 0, counter_4 = 0, counter_5 = 0;
     int score = 0, mistake = 0;
     char letter;
@@ -21,11 +26,12 @@ int main(){
     int row_number;
     bool valid;
     int word_length;
-    row_1.assign(10, '_');
-    row_2.assign(10, '_');
-    row_3.assign(10, '_');
-    row_4.assign(10, '_');
-    row_5.assign(10, '_');
+    set_empty(row_1);
+    set_empty(row_2);
+    set_empty(row_3);
+    set_empty(row_4);
+    set_empty(row_4);
+    set_empty(row_5);
     letter = random_letter();
     start();
     cout << right;
@@ -87,6 +93,11 @@ int main(){
             }
         }
         else if (input == "exit"){
+            delete [] row_1;
+            delete [] row_2;
+            delete [] row_3;
+            delete [] row_4;
+            delete [] row_5;
             break;
         }
         else if (input == "submit"){
@@ -102,7 +113,7 @@ int main(){
                 valid = check_word(row_1, counter_1);
                 word_length = counter_1;
                 counter_1 = 0;
-                row_1.assign(10, '_');
+                set_empty(row_1);
             } else if (row_number == 2){
                 if (counter_2 == 0){
                     cout << "Sorry. The row you are submitting is empty!" << endl;
@@ -111,7 +122,7 @@ int main(){
                 valid = check_word(row_2, counter_2);
                 word_length = counter_2;
                 counter_2 = 0;
-                row_2.assign(10, '_');
+                set_empty(row_2);
             } else if (row_number == 3){
                 if (counter_3 == 0){
                     cout << "Sorry. The row you are submitting is empty!" << endl;
@@ -120,7 +131,7 @@ int main(){
                 valid = check_word(row_3, counter_3);
                 word_length = counter_3;
                 counter_3 = 0;
-                row_3.assign(10, '_');
+                set_empty(row_3);
             } else if (row_number == 4){
                 if (counter_4 == 0){
                     cout << "Sorry. The row you are submitting is empty!" << endl;
@@ -129,7 +140,7 @@ int main(){
                 valid = check_word(row_4, counter_4);
                 word_length = counter_4;
                 counter_4 = 0;
-                row_4.assign(10, '_');
+                set_empty(row_4);
             } else if (row_number == 5){
                 if (counter_5 == 0){
                     cout << "Sorry. The row you are submitting is empty!" << endl << endl;
@@ -138,7 +149,7 @@ int main(){
                 valid = check_word(row_5, counter_5);
                 word_length = counter_5;
                 counter_5 = 0;
-                row_5.assign(10, '_');
+                set_empty(row_5);
             } else{
                 cout << endl;
                 cout << "Sorry. Your input is invalid!" << endl << endl;
@@ -154,6 +165,11 @@ int main(){
                 if (mistake > 10){
                     cout << endl;
                     game_over(score);
+                    delete [] row_1;
+                    delete [] row_2;
+                    delete [] row_3;
+                    delete [] row_4;
+                    delete [] row_5;
                     break;
                 }
             }
