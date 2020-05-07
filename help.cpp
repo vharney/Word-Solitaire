@@ -2,7 +2,7 @@
 using namespace std;
 
 void help(){
-    cout << "-------------------------------------------------------------" << endl;
+    cout << endl << "-------------------------------------------------------------" << endl << endl;
     cout << "Here are some basic input instructions:" << endl;
     cout << "- Select row   : Enter one number from 1 to 5" << endl;
     cout << "- Exit game    : Enter 'exit'" << endl;
@@ -24,5 +24,5 @@ void help(){
     cout << "8th letter : 50" << endl;
     cout << "9th letter : 80" << endl;
     cout << "10th letter: 100" << endl;
-    cout << "-------------------------------------------------------------" << endl << endl;
+    cout << endl << "-------------------------------------------------------------" << endl << endl;
 }

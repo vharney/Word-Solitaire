@@ -2,7 +2,7 @@
 #include <iomanip>
 using namespace std;
 
-void game_over(int score){
+bool game_over(int score){
     string play_again;
     cout << right;
     cout << setw(38) << ">> GAME OVER! <<" << endl << endl;
@@ -19,13 +19,14 @@ void game_over(int score){
             cout << right;
             cout << setw(50) << "Thank you for playing! See you next time!" << endl;
             cout << "-------------------------------------------------------------" << endl;
-            break;
+            return false;
+        } else if (play_again == "yes"){
+            cout << "-------------------------------------------------------------" << endl << endl;
+            return true;
         }
-        // else if {
-        //     // call function play
-        // }
         else {
             cout << "Sorry. Your input is invalid! Please enter 'yes' or 'no'" << endl << endl;
         }
     }
+    return false;
 }
