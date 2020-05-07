@@ -12,14 +12,18 @@
 #include "quit.h"
 using namespace std;
 
-void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& row_2, char *& row_3, char *& row_4, char *& row_5, int &counter_1, int &counter_2, int &counter_3, int &counter_4, int &counter_5, bool &exit_game){
+void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& row_2, char *& row_3, char *& row_4, char *& row_5, int &counter_1, int &counter_2, int &counter_3, int &counter_4, int &counter_5, bool &exit_game, int &high_score){
     string input;
     int row_number;
     bool valid;
     int word_length;
+    ifstream fin;
+    fin.open("high_score.txt");
+    fin >> high_score;
+    fin.close();
     cout << right;
     cout << setw(42) << ">> Have fun playing! <<" << endl;
-    print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
+    print_board(row_1, row_2, row_3, row_4, row_5, score, mistake, high_score);
     while (true){
         cout << "Letter: " << letter << endl;
         cout << "Enter Command: ";
@@ -28,7 +32,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
             if (counter_1 < 10){
                 row_1[counter_1] = letter;
                 ++counter_1;
-                print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
+                print_board(row_1, row_2, row_3, row_4, row_5, score, mistake, high_score);
             } else {
                 cout << endl << "Sorry. The row is full!" << endl << endl;
                 continue;
@@ -38,7 +42,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
             if (counter_2 < 10){
                 row_2[counter_2] = letter;
                 ++counter_2;
-                print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
+                print_board(row_1, row_2, row_3, row_4, row_5, score, mistake, high_score);
             } else {
                 cout << endl << "Sorry. The row is full!" << endl << endl;
                 continue;
@@ -48,7 +52,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
             if (counter_3 < 10){
                 row_3[counter_3] = letter;
                 ++counter_3;
-                print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
+                print_board(row_1, row_2, row_3, row_4, row_5, score, mistake, high_score);
             } else {
                 cout << endl << "Sorry. The row is full!" << endl << endl;
                 continue;
@@ -58,7 +62,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
             if (counter_4 < 10){
                 row_4[counter_4] = letter;
                 ++counter_4;
-                print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
+                print_board(row_1, row_2, row_3, row_4, row_5, score, mistake, high_score);
             } else {
                 cout << endl << "Sorry. The row is full!" << endl << endl;
                 continue;
@@ -68,7 +72,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
             if (counter_5 < 10){
                 row_5[counter_5] = letter;
                 ++counter_5;
-                print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
+                print_board(row_1, row_2, row_3, row_4, row_5, score, mistake, high_score);
             } else {
                 cout << endl << "Sorry. The row is full!" << endl << endl;
                 continue;
@@ -86,17 +90,6 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
                 fout << "";
                 fout.close();
             }
-            // delete [] row_1;
-            // delete [] row_2;
-            // delete [] row_3;
-            // delete [] row_4;
-            // delete [] row_5;
-            // set_empty(row_1);
-            // set_empty(row_2);
-            // set_empty(row_3);
-            // set_empty(row_4);
-            // set_empty(row_4);
-            // set_empty(row_5);
             exit_game = true;
             break;
         }
@@ -164,25 +157,15 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
                 mistake_adder(mistake);
                 if (mistake > 10){
                     cout << endl;
-                    // game_over(score);
-                    // ofstream fout;
-                    // fout.open("progress.txt");
-                    // fout << "";
-                    // fout.close();
-                    // delete [] row_1;
-                    // delete [] row_2;
-                    // delete [] row_3;
-                    // delete [] row_4;
-                    // delete [] row_5;
                     exit_game = false;
                     break;
                 }
             }
-            print_board(row_1, row_2, row_3, row_4, row_5, score, mistake);
+            print_board(row_1, row_2, row_3, row_4, row_5, score, mistake, high_score);
             continue;
         } else if (input == "help") {
-            cout << endl;
             help();
+            print_board(row_1, row_2, row_3, row_4, row_5, score, mistake, high_score);
             continue;
         }
         else{

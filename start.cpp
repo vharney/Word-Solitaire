@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 #include "help.h"
 #include "check_progress.h"
 #include "set_empty.h"
@@ -9,7 +10,6 @@ using namespace std;
 
 void start(int &score, int &mistake, char &letter, char *& row_1, char *& row_2, char *& row_3, char *& row_4, char *& row_5, int &counter_1, int &counter_2, int &counter_3, int &counter_4, int &counter_5){
     string ans;
-
     cout << endl;
     cout << right;
     cout << setw(44) << "Welcome to World Solitaire!" << endl << endl;
@@ -30,7 +30,7 @@ void start(int &score, int &mistake, char &letter, char *& row_1, char *& row_2,
         letter = random_letter();
     }
     else{
-        cout << "Last game progress is available. Do you want to continue? (yes/no)" << endl;
+        cout << "Last game progress is available." << endl << "Do you want to continue? (yes/no)" << endl;
         while (true){
             cin >> ans;
             if (ans == "yes"){
@@ -53,5 +53,5 @@ void start(int &score, int &mistake, char &letter, char *& row_1, char *& row_2,
         }
         cout << endl << "-------------------------------------------------------------" << endl << endl;
     }
-    
+
 }
