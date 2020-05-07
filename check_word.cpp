@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-bool check_word(vector<char> row, int counter){
+bool check_word(char *& row, int counter){
     string first_letter;
     string x;
     string word = "";
