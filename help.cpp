@@ -11,7 +11,7 @@ void help(){
     cout << "                 enter the row number you want to submit" << endl;
     cout << "- View help    : Enter 'help'" << endl << endl;
     cout << "When is GAME OVER?" << endl;
-    cout << "More than 10 invalid words have been submitted." << endl << endl;
+    cout << "More than 5 invalid words have been submitted." << endl << endl;
     cout << "Score for each letter:" << endl;
     cout << "1st letter : 10" << endl;
     cout << "2nd letter : 10" << endl;

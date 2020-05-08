@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <string>
 #include "random_letter.h"
 #include "print_board.h"
 #include "help.h"
@@ -14,20 +15,26 @@ using namespace std;
 
 void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& row_2, char *& row_3, char *& row_4, char *& row_5, int &counter_1, int &counter_2, int &counter_3, int &counter_4, int &counter_5, bool &exit_game, int &high_score){
     string input;
-    int row_number;
-    bool valid;
+    string row_number;
     int word_length;
+    bool valid;
+
     ifstream fin;
     fin.open("high_score.txt");
     fin >> high_score;
     fin.close();
+
+    cout << endl << "-------------------------------------------------------------" << endl << endl;
     cout << right;
     cout << setw(42) << ">> Have fun playing! <<" << endl;
+
     print_board(row_1, row_2, row_3, row_4, row_5, score, mistake, high_score);
+
     while (true){
         cout << "Letter: " << letter << endl;
         cout << "Enter Command: ";
         cin >> input;
+
         if (input == "1"){
             if (counter_1 < 10){
                 row_1[counter_1] = letter;
@@ -97,8 +104,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
             cout << endl << "Which row would you like to submit? ";
             cin >> row_number;
             cout << endl;
-
-            if (row_number == 1){
+            if (row_number == "1"){
                 if (counter_1 == 0){
                     cout << "Sorry. The row you are submitting is empty!" << endl << endl;
                     continue;
@@ -107,7 +113,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
                 word_length = counter_1;
                 counter_1 = 0;
                 set_empty(row_1);
-            } else if (row_number == 2){
+            } else if (row_number == "2"){
                 if (counter_2 == 0){
                     cout << "Sorry. The row you are submitting is empty!" << endl << endl;
                     continue;
@@ -116,7 +122,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
                 word_length = counter_2;
                 counter_2 = 0;
                 set_empty(row_2);
-            } else if (row_number == 3){
+            } else if (row_number == "3"){
                 if (counter_3 == 0){
                     cout << "Sorry. The row you are submitting is empty!" << endl << endl;
                     continue;
@@ -125,7 +131,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
                 word_length = counter_3;
                 counter_3 = 0;
                 set_empty(row_3);
-            } else if (row_number == 4){
+            } else if (row_number == "4"){
                 if (counter_4 == 0){
                     cout << "Sorry. The row you are submitting is empty!" << endl << endl;
                     continue;
@@ -134,7 +140,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
                 word_length = counter_4;
                 counter_4 = 0;
                 set_empty(row_4);
-            } else if (row_number == 5){
+            } else if (row_number == "5"){
                 if (counter_5 == 0){
                     cout << "Sorry. The row you are submitting is empty!" << endl << endl;
                     continue;
@@ -144,7 +150,6 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
                 counter_5 = 0;
                 set_empty(row_5);
             } else{
-                cout << endl;
                 cout << "Sorry. Your input is invalid!" << endl << endl;
                 continue;
             }
@@ -155,7 +160,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
                 
             } else{
                 mistake_adder(mistake);
-                if (mistake > 10){
+                if (mistake > 5){
                     cout << endl;
                     exit_game = false;
                     break;

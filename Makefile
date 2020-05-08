@@ -52,6 +52,6 @@ word_solitaire: random_letter.o word_solitaire_main.o print_board.o start.o help
 	g++ $(FLAGS) $^ -o $@
 
 clean:
-	rm -f random_letter.o word_solitaire_main.o print_board.o start.o help.o
+	rm -f random_letter.o word_solitaire_main.o print_board.o start.o help.o check_word.o score_calculator.o mistake_adder.o game_over.o set_empty.o save_row.o save_progress.o quit.o check_progress.o load_progress.o play_game.o
 
 .PHONY: clean
