@@ -10,6 +10,7 @@ using namespace std;
 
 void start(int &score, int &mistake, char &letter, char *& row_1, char *& row_2, char *& row_3, char *& row_4, char *& row_5, int &counter_1, int &counter_2, int &counter_3, int &counter_4, int &counter_5){
     string ans;
+
     cout << endl;
     cout << right;
     cout << setw(44) << "Welcome to World Solitaire!" << endl << endl;
@@ -20,6 +21,7 @@ void start(int &score, int &mistake, char &letter, char *& row_1, char *& row_2,
     cout << "will  be counted as a mistake. Your mistakes will be recorded" << endl;
     cout << "and shown on the top right." << endl;
     help();
+
     if (check_progress()){
         set_empty(row_1);
         set_empty(row_2);

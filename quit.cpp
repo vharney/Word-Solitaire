@@ -5,7 +5,9 @@ using namespace std;
 string quit(){
     string save_progress;
     string res;
+    
     cout << "Do you want to save your progress? (yes/no)" << endl;
+
     while (true){
         cin >> save_progress;
         if (save_progress == "yes"){

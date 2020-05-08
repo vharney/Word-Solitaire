@@ -35,7 +35,6 @@ int main(){
             fout.open("progress.txt");
             fout << "";
             fout.close(); 
-            
             set_empty(row_1);
             set_empty(row_2);
             set_empty(row_3);
@@ -57,4 +56,6 @@ int main(){
     delete [] row_3;
     delete [] row_4;
     delete [] row_5;
+
+    return 0;
 }
