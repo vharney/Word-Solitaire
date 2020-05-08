@@ -53,7 +53,7 @@ Enter Command: (user input)
 Functions:
 ----------
 1. Generation of random game sets or events
-  - Random letter generator
+  - Random letter generator (used to form letter in rows to be submitted)
   
 2. Data structures for storing game status
   - Saving game progress :
@@ -63,7 +63,7 @@ Functions:
   - Storing high score
   
 3. Dynamic memory management
-  - To store each row in a dynamic array [(will be freed when a word is completed)-->?]
+  - To store each row in a dynamic array (will be freed before the program is terminated)
   
 4. File input/output (e.g., for loading/saving game status)
   - When game ends fout to a file containing the high score (high_score.txt) if the high score is beaten
@@ -72,30 +72,34 @@ Functions:
   - The player can load the progress from last game, fin from progress.txt file
   
 5. Program codes in multiple files
-   different functions will be coded in multiple files (i.e function to randomise letter, function to save mistake counter etc.)
-  - random_letter.cpp
-  - word_solitaire_main.cpp 
-  - print_board.cpp 
-  - start.cpp 
-  - help.cpp 
-  - check_word.cpp 
-  - score_calculator.cpp 
-  - mistake_adder.cpp 
-  - game_over.cpp 
-  - set_empty.cpp 
-  - save_row.cpp 
-  - save_progress.cpp 
-  - quit.cpp 
-  - check_progress.cpp 
-  - load_progress.cpp 
-  - play_game.cpp
+   _different functions will be coded in multiple files_
+  - random_letter.cpp --> generate random letters, using rand() and srand().
+  - word_solitaire_main.cpp --> main function, compilation of different functions to execute the game?
+  - print_board.cpp --> print the board containing score, mistakes, rows, and high score.
+  - start.cpp --> show the welcome message and the main menu of the game.
+  - help.cpp --> show instructions and some useful information of the game
+  - check_word.cpp --> check if the submitted word is in the English dictionary.
+  - score_calculator.cpp --> calculate the score for each submitted word.
+  - mistake_adder.cpp --> add the mistake for each wrong submitted word.
+  - game_over.cpp --> show the score, check if high score is beaten, and ask the player whether he wants to play again or not.
+  - set_empty.cpp --> empty the row (fill the rows with "\_") after submitting the row or starting a new game. 
+  - save_row.cpp --> save the corresponding row to progress.txt
+  - save_progress.cpp --> save the game progress to progress.txt (save information such as score, mistakes, counters for each letter in the row, rows, and letter generated) for saving the rows, it calls save_row function. 
+  - quit.cpp --> ask player whether he wants to save the current game progress or not.
+  - check_progress.cpp --> check whether there is a progress that the previous player saved.
+  - load_progress.cpp --> load the information from progress.txt (load information such as score, mistakes, counters for each letter in the row, rows, and letter generated).
+  - play_game.cpp --> ask for player command (entering letter to row, submit row, etc.), control the flow of the game.
 
-6. Importing dictionary to check if word exist --> ?
+6. Storing English dictionary in a .txt file to check if word exist.
 
-Execution Instructions:
-----------------------
-- To compile all files before starting the game: make word_solitaire
-
+Compilation and Execution Instructions: _command is in italic_
+---------------------------------------
+Step 1: (compile all the .cpp into a single executable called word_solitaire)
+_make word_solitaire_
+Step 2: (clean all the intermediary files)
+_make clean_
+Step 3: (run the executable file which is the game)
+_./word_solitaire_
 
 Citation:
 ---------
