@@ -11,33 +11,27 @@ Word Solitaire
 
 Game Description:
 -----------------
-To add randomly generated letters into words in the given spaces (rows). The longer the word you create the higher the score you will earn. The aim of the game is to score as high as you can.
+Create words (minimum 2 letters) from randomly generated letters in the given spaces (rows). The longer the word created, the higher the score will be. The aim of the game is to score as high as you can.
 
-The player can decide whether to submit words in corresponding rows after every move. The score will be added based on the gap filled, the score for every gap is shown above the 1st row.
+The player can decide whether to submit words in corresponding rows on every move. The score will be added based on the gap filled. Each gap has its own score.
 
-User can pause the game and save it to a file. They can continue to play the game whenever they feel like it.
+The player can quit the game and save the progress. They can continue to play the game whenever they feel like it.
 
 Every time the player launches the game, the player can choose whether to continue the game from the last session (from the existing file) or start a new game.
 
 Game Rules:
 -----------
 
-When a player submits a wrong word (not in the english dictionary), the mistake counter will increase by 1 (which will be shown in the mistake counter on the top right). 
+When the player submits a wrong word (not in the english dictionary), the mistake counter will increase by 1 (which will be shown in the mistake counter on the top right). 
 
 When the player submits a wrong word in one of the rows, the corresponding row will be cleared.
 
-The game ends:
-- When the player submitted 5 wrong words (the mistake counter is 5). 
-- When all the rows are filled and no valid word can be submitted.
+The game ends when the player submitted more than 5 wrong words (the mistake counter is 5). 
 
 ///////////////////////////////////////////////////////PROTOTYPE\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-Total Score: (score)                                                                                               mistakes: 0 
- 
-                                                                                                                          
-
-score   100  100  100  300  400  500  500  500  800  1000                                                                 
-
+------------------------------------------------------------------------------------------------------------------------------
+Total Score: (score)                                                                            Mistakes: (number of mistakes)
+                                                              
 Row 1 :  _    _    _    _    _    _    _    _    _    _                                                                   
 
 Row 2 :  _    _    _    _    _    _    _    _    _    _                                                                   
@@ -47,11 +41,12 @@ Row 3 :  _    _    _    _    _    _    _    _    _    _
 Row 4 :  _    _    _    _    _    _    _    _    _    _                                                                   
 
 Row 5 :  _    _    _    _    _    _    _    _    _    _                                                                    
+                                                                                                       
+                                                                                                      High Score: (high score)  
+------------------------------------------------------------------------------------------------------------------------------
 
-                                                                                                                          
-
-Letter: (random letter)                                                                              High Score: (all-time hs)  
-
+Letter: (random letter)  
+Enter Command: (user input)
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////////////////////////////////
 
 
@@ -61,34 +56,46 @@ Functions:
   - Random letter generator
   
 2. Data structures for storing game status
-  - Storing mistakes
-  - Storing unfinished words
-  - Storing scores
+  - Saving game progress :
+      - Storing mistakes
+      - Storing unfinished words and/or empty rows
+      - Storing score
+  - Storing high score
   
 3. Dynamic memory management
-  - To store each row in a dynamic array and/or vector (will be freed when a word is completed)
-  - Change size when adding a new word.
+  - To store each row in a dynamic array [(will be freed when a word is completed)-->?]
   
 4. File input/output (e.g., for loading/saving game status)
-  - When game ends fout to a file containing the scores (if the high score is beaten)
-  - fin from the file of scores the highest score
-  - user can pause the game, saved to a file (savefile.txt)
-  - user can load paused game, fin from the savefile.txt
+  - When game ends fout to a file containing the high score (high_score.txt) if the high score is beaten
+  - fin from the file of high score (high_score.txt) to print the high score in the board
+  - The player can quit the game and save the progress to a file (progress.txt)
+  - The player can load the progress from last game, fin from progress.txt file
   
 5. Program codes in multiple files
    different functions will be coded in multiple files (i.e function to randomise letter, function to save mistake counter etc.)
   - random_letter.cpp
-  - check_mistake.cpp
-  - import_dictionary.cpp
-  - high_score.cpp
-  - check_word.cpp
-  - score_calculator.cpp
-  - start.cpp
-  - finish.cpp
-  - choose_row.cpp
-  - play.cpp
-  
-6. Importing dictionary to check if word exist
+  - word_solitaire_main.cpp 
+  - print_board.cpp 
+  - start.cpp 
+  - help.cpp 
+  - check_word.cpp 
+  - score_calculator.cpp 
+  - mistake_adder.cpp 
+  - game_over.cpp 
+  - set_empty.cpp 
+  - save_row.cpp 
+  - save_progress.cpp 
+  - quit.cpp 
+  - check_progress.cpp 
+  - load_progress.cpp 
+  - play_game.cpp
+
+6. Importing dictionary to check if word exist --> ?
+
+Execution Instructions:
+----------------------
+- To compile all files before starting the game: make word_solitaire
+
 
 Citation:
 ---------

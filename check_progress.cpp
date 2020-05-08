@@ -6,11 +6,15 @@ bool check_progress(){
     char x;
     ifstream fin;
     fin.open("progress.txt");
+
     while (fin >> x){
         ++counter;
     }
-    if (counter == 0)
+
+    if (counter == 0){
         return true;
-    else
+    } else {
         return false;
+    }
+    fin.close();
 }

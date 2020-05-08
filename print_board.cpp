@@ -4,7 +4,7 @@
 #include <iomanip>
 using namespace std;
 
-void print_board(char *& row_1, char *& row_2, char *& row_3, char *& row_4, char *& row_5, int score, int mistakes){
+void print_board(char *& row_1, char *& row_2, char *& row_3, char *& row_4, char *& row_5, int score, int mistakes, int high_score){
     cout << endl;
     cout << "-------------------------------------------------------------" << endl;
     cout << "Total Score: " << score;
@@ -34,6 +34,9 @@ void print_board(char *& row_1, char *& row_2, char *& row_3, char *& row_4, cha
     cout << "ROW 5:  ";
     for (int i = 0; i < 10; ++i)
         cout << row_5[i] << "  ";
-    cout << endl << endl << "-------------------------------------------------------------" << endl;
+
     cout << endl;
+    cout << right;
+    cout << setw (61-(to_string(high_score)).length()) << "High Score: " << high_score;
+    cout << endl << "-------------------------------------------------------------" << endl << endl;
 }
