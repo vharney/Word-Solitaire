@@ -23,7 +23,7 @@ int main(){
     int row_number, word_length;
     bool valid, play = true, exit_game = false;
     
-    start(score, mistake, letter, row_1, row_2, row_3, row_4, row_5, counter_1, counter_2, counter_3, counter_4, counter_5);
+    start(score, mistake, letter, row_1, row_2, row_3, row_4, row_5, counter_1, counter_2, counter_3, counter_4, counter_5, play);
 
     while (play){
         play_game(score, mistake, letter, row_1, row_2, row_3, row_4, row_5, counter_1, counter_2, counter_3, counter_4, counter_5, exit_game, high_score);
