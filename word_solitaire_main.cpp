@@ -41,6 +41,11 @@ int main(){
             set_empty(row_4);
             set_empty(row_4);
             set_empty(row_5);
+            counter_1 = 0;
+            counter_2 = 0;
+            counter_3 = 0;
+            counter_4 = 0;
+            counter_5 = 0;
             mistake = 0;
             score = 0;
             letter = random_letter();
