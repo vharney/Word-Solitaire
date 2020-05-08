@@ -16,7 +16,7 @@ bool check_word(char *& row, int counter){
         word += row[i]+32;
     }
     ifstream fin;
-    fin.open(("dictionary/" + first_letter + "_DICT.txt").c_str());
+    fin.open(("DICTIONARY_COMPLETE/" + first_letter + "_DICT.txt").c_str());
     while (fin >> x){
         if (x.length() > word.length()){
             break;
