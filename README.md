@@ -67,13 +67,13 @@ Functions:
   - Random letter generator (used to form letter in rows to be submitted)
   
 2. Data structures for storing game status
-  These Data will be stored in a user defined data type of struct:
-    - Saving game progress :
+   - Saving game progress (_These Data will be stored in a user defined data type of struct_):
       - Storing mistakes (int variable)
       - Storing unfinished words and/or empty rows (dynamic array of char)
       - Storing score (int variable)
-    - Booleans to keep the game looping until player decides to stop playing
-  - Storing high score
+      - Booleans to keep the game looping until player decides to stop playing
+      - Storing high score (int)
+   - Storing the player's input using string
   
   
 3. Dynamic memory management
