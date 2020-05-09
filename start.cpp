@@ -33,7 +33,7 @@ void start(int &score, int &mistake, char &letter, char *& row_1, char *& row_2,
     cout << "Try  to  create  words  with the random letters provided, the" << endl;
     cout << "longer  the  word  the  higher score you will get! Your total" << endl;
     cout << "score  will be shown on the top left. You are only allowed to" << endl; 
-    cout << "submit  a  maximum  of 5 invalid words, and each invalid word" << endl;
+    cout << "submit  no  more  than 5 invalid words, and each invalid word" << endl;
     cout << "will  be counted as a mistake. Your mistakes will be recorded" << endl;
     cout << "                 and shown on the top right.                 " << endl;
 
