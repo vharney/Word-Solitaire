@@ -95,10 +95,15 @@ Functions:
 Compilation and Execution Instructions: _command is in italic_
 ---------------------------------------
 Step 1: (compile all the .cpp into a single executable called word_solitaire)
+
 _make word_solitaire_
+
 Step 2: (clean all the intermediary files)
+
 _make clean_
+
 Step 3: (run the executable file which is the game)
+
 _./word_solitaire_
 
 Citation:
