@@ -14,6 +14,14 @@ using namespace std;
 // it calls the right functions to run the game and controls the flow of whole program. 
 // output: (none)
 
+struct game_status{
+    int score;
+    int mistake;
+    int high_score;
+    char letter;
+    bool play, exit_game;
+};
+
 int main(){
     char * row_1 = new char [10];
     char * row_2 = new char [10];
@@ -21,20 +29,20 @@ int main(){
     char * row_4 = new char [10];
     char * row_5 = new char [10];
     int counter_1 = 0, counter_2 = 0, counter_3 = 0, counter_4 = 0, counter_5 = 0;
-    int score = 0, mistake = 0, high_score;
-    char letter;
+    game_status game;
+    game.score = 0, game.mistake = 0, game.play = true, game.exit_game = false;
     string input;
     int row_number, word_length;
-    bool valid, play = true, exit_game = false;
+    bool valid;
     
-    start(score, mistake, letter, row_1, row_2, row_3, row_4, row_5, counter_1, counter_2, counter_3, counter_4, counter_5, play);
+    start(game.score, game.mistake, game.letter, row_1, row_2, row_3, row_4, row_5, counter_1, counter_2, counter_3, counter_4, counter_5, game.play);
 
-    while (play){
-        play_game(score, mistake, letter, row_1, row_2, row_3, row_4, row_5, counter_1, counter_2, counter_3, counter_4, counter_5, exit_game, high_score);
-        if (exit_game){
+    while (game.play){
+        play_game(game.score, game.mistake, game.letter, row_1, row_2, row_3, row_4, row_5, counter_1, counter_2, counter_3, counter_4, counter_5, game.exit_game, game.high_score);
+        if (game.exit_game){
             break;
         } else {
-            play = game_over(score, high_score);
+            game.play = game_over(game.score, game.high_score);
             ofstream fout;
             fout.open("progress.txt");
             fout << "";
@@ -50,10 +58,10 @@ int main(){
             counter_3 = 0;
             counter_4 = 0;
             counter_5 = 0;
-            mistake = 0;
-            score = 0;
-            letter = random_letter();
-            if (play){
+            game.mistake = 0;
+            game.score = 0;
+            game.letter = random_letter();
+            if (game.play){
                 continue;
             } else {
                 break;
