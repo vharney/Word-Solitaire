@@ -8,6 +8,15 @@
 #include "load_progress.h"
 using namespace std;
 
+// input : (pass by reference) score (int), mistake (int), randomized letter (char), 
+//         row 1 to 5 (dynamic arrays of char), counter 1 to 5 of the number of letters in each row (int), 
+//         and variable play to indicate whether the player wants to play the game or not (bool)
+// this function shows the welcome message when the program first run and shows the main menu of the game.
+// if the player chooses to exit the game, the good-bye message will be shown and the variable play will be false.
+// modify main menu if save file exists, can also show help page
+// output: prints the welcome message, prints the main menu, prints the good-bye message if the player wants to quit,
+//         and prints error message if the player enters the wrong input
+
 void start(int &score, int &mistake, char &letter, char *& row_1, char *& row_2, char *& row_3, char *& row_4, char *& row_5, int &counter_1, int &counter_2, int &counter_3, int &counter_4, int &counter_5, bool &play){
     string ans;
     string select_menu;
@@ -30,7 +39,7 @@ void start(int &score, int &mistake, char &letter, char *& row_1, char *& row_2,
     if (!check_progress()){
         while (true){
             cout << "                _____________________________               " << endl;
-            cout << "               |                             |              " << endl;
+            cout << "               |          MAIN MENU          |              " << endl;
             cout << "               |  1.) Start New Game         |              " << endl;
             cout << "               |  2.) Continue Previous Game |              " << endl;
             cout << "               |  3.) Show Instructions      |              " << endl;
@@ -58,7 +67,11 @@ void start(int &score, int &mistake, char &letter, char *& row_1, char *& row_2,
             }
             else if (select_menu == "4"){
                 play = false;
-                cout << endl << "     Thank you for stopping by! See you later alligator!" << endl;
+                cout << endl << "           _______________________________________" << endl;
+                cout << "   ._.    /      Thank you for stopping by!!      \\    ._." << endl;
+                cout << "  [0.0]  <        See you later alligator!!        >  [0.0] " << endl;
+                cout << "  |)__)   \\_______________________________________/   (__(|" << endl;
+                cout << "  -'-'-                                               -'-'- " << endl;
                 cout << "-------------------------------------------------------------" << endl;
                 break;
             }
@@ -70,7 +83,7 @@ void start(int &score, int &mistake, char &letter, char *& row_1, char *& row_2,
     else{
         while (true){
             cout << "                _____________________________               " << endl;
-            cout << "               |                             |              " << endl;
+            cout << "               |          MAIN MENU          |              " << endl;
             cout << "               |  1.) Start New Game         |              " << endl;
             cout << "               |  2.) Show Instructions      |              " << endl;
             cout << "               |  3.) Exit                   |              " << endl;
@@ -93,7 +106,11 @@ void start(int &score, int &mistake, char &letter, char *& row_1, char *& row_2,
             }
             else if (select_menu == "3"){
                 play = false;
-                cout << endl << "     Thank you for stopping by! See you later alligator!" << endl;
+                cout << endl << "           _______________________________________" << endl;
+                cout << "   ._.    /      Thank you for stopping by!!      \\    ._." << endl;
+                cout << "  [0.0]  <        See you later alligator!!        >  [0.0] " << endl;
+                cout << "  |)__)   \\_______________________________________/   (__(|" << endl;
+                cout << "  -'-'-                                               -'-'- " << endl;
                 cout << "-------------------------------------------------------------" << endl;
                 break;
             }

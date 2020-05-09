@@ -1,8 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
 using namespace std;
+
+// input : the submitted row (pointer for dynamic array consisted of chars)
+//         and counter for the number of letters in that row (integer)
+// this function checks whether the submitted word is valid (in the English dictionary) or not
+// by opening the dictionary corresponding to the first letter of the word
+// output: returns true if the word is valid, and returns false otherwise
 
 bool check_word(char *& row, int counter){
     string first_letter;

@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+// input : (none)
+// this function shows the basic intructions and some useful information of the game (the help page), 
+// can be called anytime during the game or from main menu before starting game
+// output: prints the help page and returns nothing 
+
 void help(){
     cout << endl << "-------------------------------------------------------------" << endl << endl;
     cout << "Here are some basic input instructions:" << endl;

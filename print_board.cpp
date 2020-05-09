@@ -4,6 +4,10 @@
 #include <iomanip>
 using namespace std;
 
+// input : (pass by reference) row 1 to 5 (dynamic arrays of char), current score (int), mistake (int), and high score (int)
+// this function prints the board which consists of the current score, number of mistakes, the rows, and all time high score
+// output: prints the board and returns nothing
+
 void print_board(char *& row_1, char *& row_2, char *& row_3, char *& row_4, char *& row_5, int score, int mistakes, int high_score){
     cout << endl;
     cout << "-------------------------------------------------------------" << endl;

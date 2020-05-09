@@ -13,6 +13,13 @@
 #include "quit.h"
 using namespace std;
 
+// input : (pass by reference) score (int), mistake (int), randomized letter (char), 
+//         row 1 to 5 (dynamic arrays of chars), counter 1 to 5 of the number of 
+//         letters in each row (int), exit_game (bool), and high score (int).
+// this function asks for the player's commands (entering letter to row, submit row, etc.), 
+// basically controls the flow of the game by calling other supporting functions.
+// output : prints the appropriate messages every time the player inputs the wrong command and returns nothing.
+
 void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& row_2, char *& row_3, char *& row_4, char *& row_5, int &counter_1, int &counter_2, int &counter_3, int &counter_4, int &counter_5, bool &exit_game, int &high_score){
     string input;
     string row_number;
@@ -101,7 +108,7 @@ void play_game(int &score, int &mistake, char &letter, char *& row_1, char *& ro
             break;
         }
         else if (input == "submit"){
-            cout << endl << "Which row would you like to submit? ";
+            cout << endl << "> Which row would you like to submit? " << endl;
             cin >> row_number;
             cout << endl;
             if (row_number == "1"){

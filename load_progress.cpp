@@ -3,6 +3,12 @@
 #include <iostream>
 using namespace std;
 
+// input : (pass by reference) score (int), mistake (int), randomized letter (char), 
+//         row 1 to 5 (dynamic arrays of chars), and counter 1 to 5 of the number of letters in each row (int)
+// this function load the progress from previous game from the file "progress.txt" and store the information to 
+// the variables passed to the function.
+// output: (none)
+
 void load_progress(int &score, int &mistake, char &letter, char *& row_1, char *& row_2, char *& row_3, char *& row_4, char *& row_5, int &counter_1, int &counter_2, int &counter_3, int &counter_4, int &counter_5){
     int counter = 0;
     int row_counter = 0;

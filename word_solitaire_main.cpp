@@ -9,6 +9,10 @@
 #include "play_game.h"
 using namespace std;
 
+// input : (none)
+// this is the main function of the whole program. 
+// it calls the right functions to run the game and controls the flow of whole program. 
+// output: (none)
 
 int main(){
     char * row_1 = new char [10];
