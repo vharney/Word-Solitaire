@@ -9,9 +9,20 @@ Name
 ----
 Word Solitaire
 
-Game Description:
------------------
-Create words (minimum 2 letters) from randomly generated letters in the given spaces (rows). The longer the word created, the higher the score will be. The aim of the game is to score as high as you can.
+Learning Objectives:
+--------------------
+To create a program (game) with the following features:
+ - Implementing dynamic arrays which size are determined at compilation time and freed before the program terminates to avoid memory leak.
+ - Creating data structure using variables of int, string, and booleans to determine the status of the program (when to end and what to show the user), Stored in a user defined struct to improve readability.
+ - Learning how to code in different files and using Makefile for effective compilation and execution.
+ - Using different types of files as supporting functions and exporting and importing data features using input and output stream.
+ - Implementing random functions (rand() and srand()) for adding unpredicted elements to the program.
+ - Learning how to collaborate using github.
+ 
+
+Game Description & Aim of The Game:
+-----------------------------------
+Create words (minimum 2 letters) from randomly generated letters in the given spaces (rows). The longer the word created, the higher the score will be. The aim of the game is to score as high as you can without making mistakes more than 5 times. This game is a good and fun way to learn English vocabularies.
 
 The player can decide whether to submit words in corresponding rows on every move. The score will be added based on the gap filled. Each gap has its own score.
 
@@ -56,14 +67,19 @@ Functions:
   - Random letter generator (used to form letter in rows to be submitted)
   
 2. Data structures for storing game status
-  - Saving game progress :
-      - Storing mistakes
-      - Storing unfinished words and/or empty rows
-      - Storing score
+  These Data will be stored in a user defined data type of struct:
+    - Saving game progress :
+      - Storing mistakes (int variable)
+      - Storing unfinished words and/or empty rows (dynamic array of char)
+      - Storing score (int variable)
+    - Booleans to keep the game looping until player decides to stop playing
   - Storing high score
   
+  
 3. Dynamic memory management
-  - To store each row in a dynamic array (will be freed before the program is terminated)
+  - Allocating memory to 5 arrays of size 10 each
+  - To store each row in a dynamic array 
+  - Freeing the memory allocated before the program is terminated
   
 4. File input/output (e.g., for loading/saving game status)
   - When game ends fout to a file containing the high score (high_score.txt) if the high score is beaten
@@ -90,7 +106,10 @@ Functions:
   - load_progress.cpp --> load the information from progress.txt (load information such as score, mistakes, counters for each letter in the row, rows, and letter generated).
   - play_game.cpp --> ask for player command (entering letter to row, submit row, etc.), control the flow of the game.
 
-6. Storing English dictionary in a .txt file to check if word exist.
+6. Using .txt files as supporting elements:
+  - Storing English dictionary in a directory called DICTIONARY_COMPLETE that consists of .txt files (A_DICT.txt, B_DICT.txt, and so on) based on the first letter to check if the submitted words exist. The .txt files contains words that are in the English dictionary (from 2-10 letters words).
+  - high_score.txt (contains the all time high score of the game, which will be imported using file input stream to the game, the .txt will be update using file output stream if a player beat the current high score in the .txt file)
+  - progress.txt (saving the progress of game into this txt file using file output stream, this contains the data of the game status. The data can be imported using file input stream to the game so that player can continue their progress)
 
 Compilation and Execution Instructions: _command is in italic_
 ---------------------------------------
