@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <fstream>
 #include <string>
+#include "play_game.h"
 #include "random_letter.h"
 #include "print_board.h"
 #include "help.h"

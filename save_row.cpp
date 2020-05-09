@@ -1,4 +1,5 @@
 #include <fstream>
+#include "save_row.h"
 using namespace std;
 
 // input : the corresponding row that is going to be saved (dynamic array of char)

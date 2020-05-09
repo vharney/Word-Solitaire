@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include "quit.h"
 using namespace std;
 
 // input : (none)

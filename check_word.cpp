@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "check_word.h"
 using namespace std;
 
 // input : the submitted row (pointer for dynamic array consisted of chars)

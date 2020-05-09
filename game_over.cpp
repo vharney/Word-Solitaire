@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include "game_over.h"
 using namespace std;
 
 // input : the score in the current game (integer) and the all time high score (integer)

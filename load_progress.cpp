@@ -1,6 +1,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include "load_progress.h"
 using namespace std;
 
 // input : (pass by reference) score (int), mistake (int), randomized letter (char), 

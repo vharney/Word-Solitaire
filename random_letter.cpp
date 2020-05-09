@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include "random_letter.h"
 using namespace std;
 
 // input : (none)

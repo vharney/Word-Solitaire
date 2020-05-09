@@ -1,4 +1,5 @@
 #include <fstream>
+#include "check_progress.h"
 using namespace std;
 
 // input : (none)

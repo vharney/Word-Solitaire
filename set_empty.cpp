@@ -1,4 +1,5 @@
 #include <iostream>
+#include "set_empty.h"
 using namespace std;
 
 // input : (pass by reference) the corresponding row that is going to be 'emptied' (dynamic array of char)

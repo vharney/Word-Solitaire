@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include "start.h"
 #include "help.h"
 #include "check_progress.h"
 #include "set_empty.h"

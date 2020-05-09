@@ -1,4 +1,5 @@
 #include <iostream>
+#include "score_calculator.h"
 using namespace std;
 
 // input : the length of the word (int) and (pass by reference) the score of the current game

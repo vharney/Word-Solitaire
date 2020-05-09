@@ -1,4 +1,5 @@
 #include <iostream>
+#include "mistake_adder.h"
 using namespace std;
 
 // input : (pass by reference) mistake (int)

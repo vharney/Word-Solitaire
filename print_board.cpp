@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <iomanip>
+#include "print_board.h"
 using namespace std;
 
 // input : (pass by reference) row 1 to 5 (dynamic arrays of char), current score (int), mistake (int), and high score (int)
