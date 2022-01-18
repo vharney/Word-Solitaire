@@ -1,7 +1,10 @@
-# 1340-Project (Group 124)
 
-Members:
+# Word Solitaire
+A text based C++ terminal game
+
+Made By:
 --------
+## 1340-Project (Group 124)
 1. Mellisa Hadipranata  (3035663019)
 2. Vieri Harney         (3035663368)
 
